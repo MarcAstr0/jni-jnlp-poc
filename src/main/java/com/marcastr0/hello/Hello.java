@@ -9,7 +9,7 @@ public class Hello {
 
     static {
         try {
-            NativeUtils.loadLibraryFromJar("/resources/HelloImpl.jnilib");
+            NativeUtils.loadLibraryFromJar("/libHelloImpl.jnilib");
         } catch (IOException e) {
             // This is probably not the best way to handle exception :-)
             e.printStackTrace();
