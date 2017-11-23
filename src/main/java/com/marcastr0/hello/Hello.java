@@ -11,16 +11,16 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 public class Hello extends JPanel implements ActionListener{
-//    public native void sayHi(String who);
+    public native String sayHi(String who);
 
-    /*static {
+    static {
         try {
             NativeUtils.loadLibraryFromJar("/libHelloImpl.jnilib");
         } catch (IOException e) {
             // This is probably not the best way to handle exception :-)
             e.printStackTrace();
         }
-    }*/
+    }
 
     private static String OK = "ok";
 
@@ -67,7 +67,7 @@ public class Hello extends JPanel implements ActionListener{
 
         if (OK.equals(cmd)) {
             String input = textField.getText();
-            if (!input.equals("")) {
+            if (!sayHi(input).equals("")) {
                 JOptionPane.showMessageDialog(controllingFrame, "Hello " + input);
             } else {
                 JOptionPane.showMessageDialog(controllingFrame, "Please enter a name", "Error message", JOptionPane.ERROR_MESSAGE);
