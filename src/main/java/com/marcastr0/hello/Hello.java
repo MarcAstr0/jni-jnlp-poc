@@ -2,10 +2,11 @@ package com.marcastr0.hello;
 
 import cz.adamh.utils.NativeUtils;
 
+import javax.swing.*;
 import java.io.IOException;
 
-public class Hello {
-    public native void sayHi(String who);
+public class Hello extends JFrame {
+//    public native void sayHi(String who);
 
     static {
         try {
@@ -16,8 +17,14 @@ public class Hello {
         }
     }
 
+    private Hello(String title) {
+        this.setSize(500,500);
+        setTitle(title);
+    }
+
     public static void main(String[] args) {
-        Hello hello = new Hello();
-        hello.sayHi(args[0]);
+        Hello window = new Hello("Hello World!");
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
