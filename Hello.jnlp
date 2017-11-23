@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="http://localhost:8080/">
+    <information>
+        <title>Java Web Start Test</title>
+        <vendor>Mario Castro Squella</vendor>
+        <homepage href="http://localhost:8080/"></homepage>
+        <description>Testing Testing</description>
+    </information>
+    <security>
+        <all-permissions></all-permissions>
+    </security>
+    <resources>
+        <j2se version="1.6+"></j2se>
+        <jar href="target/jni-jnlp-poc-1.0-SNAPSHOT-jar-with-dependencies.jar"></jar>
+    </resources>
+    <application-desc main-class="com.marcastr0.hello.Hello"></application-desc>
+</jnlp>
