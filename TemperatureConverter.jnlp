@@ -13,5 +13,5 @@
         <j2se version="1.6+"></j2se>
         <jar href="target/jni-jnlp-poc-1.0-SNAPSHOT-jar-with-dependencies.jar"></jar>
     </resources>
-    <application-desc main-class="com.marcastr0.hello.Hello"></application-desc>
+    <application-desc main-class="com.marcastr0.temperature.Converter"></application-desc>
 </jnlp>
