@@ -28,6 +28,7 @@ public class Converter extends JPanel implements ActionListener{
 
     private JFrame controllingFrame;
     private JTextField temperatureField;
+    private JFormattedTextField resultField;
 
     public Converter(JFrame f) {
         // Use the default FlowLayout.
@@ -41,10 +42,16 @@ public class Converter extends JPanel implements ActionListener{
 
         JComponent buttonPane = createButtonPanel();
 
+        resultField = new JFormattedTextField("");
+        resultField.setEditable(false);
+        JLabel resultLabel = new JLabel("Result: ");
+
         // Lay out everything.
         JPanel textPane = new JPanel(new GridLayout(2, 2));
         textPane.add(celsiusLabel);
         textPane.add(temperatureField);
+        textPane.add(resultLabel);
+        textPane.add(resultField);
 
         add(textPane);
         add(buttonPane);
@@ -74,7 +81,7 @@ public class Converter extends JPanel implements ActionListener{
             if (!input.equals("")) {
                 float fahrenheit = Float.parseFloat(input);
                 float celsius = toCelsius(fahrenheit);
-                JOptionPane.showMessageDialog(controllingFrame, String.valueOf(celsius));
+                resultField.setValue(String.valueOf(celsius) + " °C");
             } else {
                 JOptionPane.showMessageDialog(controllingFrame, "Please enter a temperature", "Error message", JOptionPane.ERROR_MESSAGE);
             }
@@ -86,7 +93,7 @@ public class Converter extends JPanel implements ActionListener{
             if (!input.equals("")) {
                 float celsius = Float.parseFloat(input);
                 float fahrenheit = toFahrenheit(celsius);
-                JOptionPane.showMessageDialog(controllingFrame, String.valueOf(fahrenheit));
+                resultField.setValue(String.valueOf(fahrenheit) + " °F");
             } else {
                 JOptionPane.showMessageDialog(controllingFrame, "Please enter a temperature", "Error message", JOptionPane.ERROR_MESSAGE);
             }
